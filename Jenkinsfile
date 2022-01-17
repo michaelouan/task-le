@@ -11,13 +11,6 @@ pipeline {
 
     stage('deploy') {
       steps {
-     docker.withRegistry('https://hub.docker.com/repository/', '') {
-
-        def customImage = docker.build("my-image:${env.BUILD_ID}")
-
-        /* Push the container to the custom Registry */
-        customImage.push()
-    }
         sh 'envsubst < pod.yaml | kubectl apply --kubeconfig /pathToKubeConfig -f -n test -'
       }
     }
