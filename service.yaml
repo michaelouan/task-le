@@ -5,8 +5,6 @@ metadata:
   labels:
       role: myrole
 spec:
-  selector:
-    app: MyApp
   ports:
     - protocol: TCP
       port: 80
