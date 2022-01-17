@@ -4,7 +4,6 @@ pipeline {
     stage('build') {
       steps {
         sh 'docker build -t $DOCKER_IMAGE:$BUILD_NUMBER .'
-        sh 'docker login -u "michaelouan26" -p "LXC5kdes:_U+e_="'
         sh 'docker push $DOCKER_IMAGE:$BUILD_NUMBER'
         sh 'docker rmi $DOCKER_IMAGE:$BUILD_NUMBER'
       }
