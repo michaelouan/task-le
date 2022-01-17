@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask
+  labels:
+    role: myrole
+spec:
+  containers:
+  - name: my-flask-test
+    image: michaelouan26/simpple-flask-app:8
+    ports:
+    - containerPort: 5000
