@@ -31,7 +31,7 @@ def userAdded(message):
  
 @app.route("/")
 def index():
-    return "Hello world"
+    return "Hello leumi world"
 
 
 
