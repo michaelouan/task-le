@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: my-flask-test
-    image: michaelouan26/simpple-flask-app:8
+    image: michaelouan26/simpple-flask-app:${BUILD_NUMBER}
     ports:
     - containerPort: 5000
