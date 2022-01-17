@@ -12,9 +12,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'echo \'$BUILD_NUMBER\''
-        sh 'cat pod.yaml | sed "s/{{BUILD_NUMBER}}/$BUILD_NUMBER/g" | kubectl apply --kubeconfig /pathToKubeConfig -f -n test -'
-        sh 'echo \'envsubst < pod.yaml\''
+        sh 'envsubst < pod.yaml | kubectl apply --kubeconfig /pathToKubeConfig -f -n test -'
       }
     }
 
